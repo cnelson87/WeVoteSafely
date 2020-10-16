@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>I found verifiably accurate information on my nearest ballot drop-off or early voting location with one click and you can too - I vote safely, you vote safely, #WeVoteSafely</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="I vote safely, you vote safely, #WeVoteSafely">
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://wevotesafely.org/img/CitizenVolunteersSafeVoting.jpg">
+    <meta property="og:description" content="I found verifiably accurate information on my nearest ballot drop-off or early voting location with one click and you can too at https://wevotesafely.org - I vote safely, you vote safely, #WeVoteSafely.">
+    <meta property="fb:app_id" content="342163656843073">
+    <meta property="og:url" content="https://wevotesafely.org/default.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2payJm4Ynu0DcdCo9AfaXZTPCUEmUt4k&callback=initAutocomplete&libraries=places&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./css/prodv2.css" />
+    <link rel="stylesheet" type="text/css" href="./css/modal.css" />
+    <link href='https://fonts.googleapis.com/css?family=IBM Plex Sans' rel='stylesheet'>
+    <script src="./js/devtest.js"></script>
+  </head>
+  <body id="main_body">
+
+    <div class="hiddenBeforeSearch" id="TopBoxAfterSearch">
+      <div id="SiteName">WeVoteSafely.org</div>
+    </div>
+
+    <div id="TopBox">
+      <div id="google_translate_element"></div>
+      <div id="TopBoxFlag"></div>
+      <div id="SiteName">WeVoteSafely.org</div>
+      <div id="TagLine">Over 16,000 early voting or ballot drop-off locations documented - find yours now!</div>
+    </div>
+
+    <div id="options">
+      <button id="Autolocate" class="noprint" onclick="onDemandGeolocate()"><div id="ButtonGraphic"></div><div id="ButtonText">Tap here to use your location</div></button>
+
+      <div id="theAddress">
+        <input type="hidden" id="street_number" />
+        <input type="hidden" id="route" />
+        <input type="hidden" id="locality" />
+        <input type="hidden" id="administrative_area_level_2" />
+        <input type="hidden" id="administrative_area_level_1" />
+        <input type="hidden" id="postal_code" />
+        <input type="hidden" id="country" />
+        <input type="hidden" id="Lat" />
+        <input type="hidden" id="Long" />
+      </div>
+
+      <div id="locationField" class="noprint">
+        <input
+          id="Autocomplete"
+          placeholder="or enter your FULL U.S. address here"
+          type="text"
+        />
+      </div>
+    </div>
+
+    <!-- Note: The address components in this sample are typical. You might need to adjust them for
+               the locations relevant to your app. For more information, see
+         https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
+    -->
+
+    <div class="defaultfont beforeMap hiddenBeforeSearch spacerUnderneath noprint" id="printThis"><a href="javascript:window.print()">Print this for someone without internet access</a></div>
+    <div class="hiddenBeforeSearch defaultfont" id="countyMessage"></div>
+    <div id="map" class="hiddenBeforeSearch"></div>
+
+    <div id="voterDetails">
+      <div id="rawOutput"></div>
+      <div class="noscreen" id="dropOffLocationAddresses"></div>
+      <hr />
+      <div id="temporaryBlurb" class="noprint defaultfont footer">Find your nearest <a target="_blank" href="./faq.html#verifiable">verifiably accurate</a> safe ballot drop-off or early voting location.</div>
+      <div id="zipCode" class="noprint defaultfont footer verticalspacer"><mark><a href="./faq.html#ZipCode">Why can I not just use my zip code?</a></mark></div>
+      <div class="noprint defaultfont" id="stateMessage"></div>
+      <div class="noprint" id="errorMessage"></div>
+      <div class="noprint defaultfont footer verticalspacer"><mark>Share on social media</mark></div>
+      <div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="my_centered_buttons">
+        <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+        <a class="a2a_button_facebook"></a>
+        <a class="a2a_button_twitter"></a>
+        <a class="a2a_button_linkedin"></a>
+        <a class="a2a_button_whatsapp"></a>
+        <a class="a2a_button_flipboard"></a>
+        <a class="a2a_button_reddit"></a>
+        <a class="a2a_button_email"></a>
+      </div>
+      <div class="noprint defaultfont footer verticalspacer"><a href="./faq.html#help">Help! Nothing happens when I tap the button!</a></div>
+      <div class="noprint defaultfont footer verticalspacer"><a href="./faq.html">Have questions?</a></div>
+      <div class="noprint defaultfont footer verticalspacer"><a href="./insights.html">Interested in safe voting location analytics?</a></div>
+      <div class="noprint defaultfont footer verticalspacer"><a href="./terms.html">Terms of use</a></div>
+      <div class="noprint defaultfont footer verticalspacer"><a href="./privacy.html">Privacy policy</a></div>
+      <div class="noprint defaultfont footer verticalspacer"></div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div id="modalContent" class="modal-content">
+        <div id="modalHeader" class="modal-header">
+          <span class="close">&times;</span>
+          A quick request...
+        </div>
+        <div class="modal-body">
+          <p>This free site does not show ads and does not collect personally identifiable information. Our mission is to provide one-click access to verifiably accurate information on safe voting locations to voters across the country.</p>
+          <p>Can you please help us (and other voters) out by spreading the word to everyone you know? Please think of three or more specific people that you can share this with and use our social sharing buttons below the map to do so. Thank you!</p>
+          <p>Please tap on the X in the upper-right part of this message window to return to your results.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      var modalContent = document.getElementById("modalContent");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modalContent) {
+          modal.style.display = "none";
+        }
+      }
+      </script>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+      }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <div class="overlay"></div>
+
+    <script>
+      var a2a_config = a2a_config || {};
+      a2a_config.templates = a2a_config.templates || {};
+
+      a2a_config.templates.email = {
+          subject: "Find your nearest safe voting location now: ${title}",
+          body: "Verifiably accurate information on 16,000+ safe voting locations across the United States :\n${link}"
+      };
+
+      a2a_config.templates.facebook = {
+          app_id: "342163656843073",
+          quote: "I found verifiably accurate information on my nearest ballot drop-off or early voting location with one click and you can too at https://wevotesafely.org - I vote safely, you vote safely, #WeVoteSafely"
+      };
+
+      a2a_config.templates.sms = {
+          body: "Find your nearest safe voting location now: ${title} ${link}"
+      };
+
+      a2a_config.templates.twitter = {
+          text: "Amazing: ${title} ${link}",
+          hashtags: "FindYourSafeVotingLocationNow",
+          related: "WeVoteSafely"
+      };
+
+      a2a_config.templates.whatsapp = {
+          text: "Find your nearest safe voting location now: ${link}"
+      };
+      </script>
+
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>I found verifiably accurate information on my nearest ballot drop-off or early voting location with one click and you can too at https://wevotesafely.org - I vote safely, you vote safely, #WeVoteSafely</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2payJm4Ynu0DcdCo9AfaXZTPCUEmUt4k&callback=initAutocomplete&libraries=places&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <script src="./js/draggable.js"></script>
+  </head>
+  <body id="main_body">
+
+    <div id="nav">
+      <div id="centeredLogo">WeVoteSafely.org</div>
+      <div id="tagLine" class="noprint">Over 16,000 early voting or ballot drop-off locations documented - find yours now!</div>
+    </div>
+
+    <div id="options">
+      <button id="autoLocate" class="noprint" onclick="onDemandGeolocate()">Tap here to use your location</button>
+
+      <div id="theAddress">
+        <input type="hidden" id="street_number" />
+        <input type="hidden" id="route" />
+        <input type="hidden" id="locality" />
+        <input type="hidden" id="administrative_area_level_2" />
+        <input type="hidden" id="administrative_area_level_1" />
+        <input type="hidden" id="postal_code" />
+        <input type="hidden" id="country" />
+        <input type="hidden" id="Lat" />
+        <input type="hidden" id="Long" />
+      </div>
+
+      <div id="locationField" class="noprint">
+        <input
+          id="autocomplete"
+          placeholder="or enter your US-based address here"
+          onFocus="nogeolocate()"
+          type="text"
+        />
+      </div>
+    </div>
+
+    <!-- Note: The address components in this sample are typical. You might need to adjust them for
+               the locations relevant to your app. For more information, see
+         https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
+    -->
+
+    <div id="map"></div>
+
+    <div id="voterDetails">
+      <div id="rawOutput"></div>
+      <div class="noscreen" id="dropOffLocationAddresses"></div>
+      <div class="noprint" id="countyMessage">Find your nearest <a target="_blank" href="./faq.html#verifiable">verifiably accurate</a> safe ballot drop-off or early voting location. Please see <a href="./faq.html">our FAQ</a>, <a href="./insights.html">analytics page</a>, <a href="./terms.html">terms of usage</a>, and <a href="./privacy.html">privacy policy</a> for more info.</div>
+      <hr />
+      <div class="noprint" id="stateMessage"></div>
+      <div id="errorMessage"></div>
+      <hr />
+      <div class="a2a_kit a2a_kit_size_32 a2a_default_style noprint" style="line-height: 32px;">Share on social media
+        <a class="a2a_dd" href="https://www.addtoany.com/share#url=https%3A%2F%2Fwww.wevotesafely.org">
+          <span class="a2a_svg a2a_s__default a2a_s_a2a" style="background-color: rgb(128, 0, 128);">
+            <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <g fill="#FFF">
+              <path d="M14 7h4v18h-4z"></path>
+              <path d="M7 14h18v4H7z"></path>
+              </g>
+            </svg>
+          </span>
+          <span class="a2a_label a2a_localize" data-a2a-localize="inner,Share">Share</span>
+        </a>
+        <div style="clear: both;"></div>
+      </div>
+    </div>
+
+  <div class="overlay"></div>
+
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
+          
+  </body>
+</html>
