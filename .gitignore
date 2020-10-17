@@ -36,12 +36,6 @@ results
 npm-debug.log
 node_modules
 
-# Sass #
-########
-.sass-cache
-
 # Development Environment #
 ###########################
 node_modules
-bower_components
-_builds/dev/

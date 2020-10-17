@@ -1,0 +1,375 @@
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+/* Always set the map height explicitly to define the size of the div element that contains the map. */
+
+#map {
+	padding-top: 12px;
+	height: 50%;
+	width: 100%;
+	border-width: 1px;
+	background-color: lightgray;
+}
+
+#nav {
+	background-color: #fee;
+	background: linear-gradient(90deg, #808 0%, #808 10%, #808 90%, #808 100%);
+	box-shadow: 0 0 1em rgba(0,0,0,0.3);
+	top: 0;
+	width: 100%;
+	padding-top: 0.5vw;
+	padding-bottom: 0.5vw;
+	margin:auto;
+	z-index: 999;
+	user-select: none !important;
+}
+
+#logo {
+	font-size: 1.95em;
+	line-height: 1.67em;
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
+	color: #fff;
+	opacity: 0.95;
+	width: auto;
+	margin-left: 1em;
+	margin-right: 1em;
+	float: left;
+	font-weight: 900;
+	letter-spacing: -0.01em;
+}
+
+#centeredLogo {
+	font-size: 1.95em;
+	line-height: 1.2em;
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
+	color: #fff;
+	opacity: 0.95;
+	width: auto;
+	margin:auto;
+	font-weight: 900;
+	letter-spacing: -0.01em;
+	text-align: center;
+}
+
+@media only screen and (max-width: 1026px) {
+	#tagLine {
+			display: none;
+	}
+}
+
+@media (orientation:portrait) {
+	#tagLine {
+		display: none;
+	}
+}
+
+#tagLine {
+	font-size: 1.65em;
+	line-height: 1.2em;
+	font-family: "Roboto", Arial, Helvetica, sans-serif, 'Lato', sans-serif;
+	color: white;
+	opacity: 0.95;
+	width: auto;
+	margin: auto;
+	font-weight: 900;
+	letter-spacing: -0.01em;
+	text-align: center;
+}
+
+/* Optional: Makes the sample page fill the window. */
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.label {
+	text-align: right;
+	font-weight: bold;
+	width: 100px;
+	color: #303030;
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+#address {
+	visibility: visible;
+	border: 1px solid #000090;
+	background-color: #f0f9ff;
+	width: 780px;
+}
+
+#address td {
+	font-size: 10pt;
+}
+
+.field {
+	width: 99%;
+}
+
+.slimField {
+	width: 80px;
+}
+
+.wideField {
+	width: 200px;
+}
+
+#options {
+	margin-top: 0.2em;
+	display: block;
+	clear: both;
+	position: relative;
+	font-size: x-large;
+	text-align: center;
+}
+
+#locationField {
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+.overlay {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background: rgba(255,255,255,0.8) url("../img/loader.gif") center no-repeat;
+}
+
+/* Turn off scrollbar when body element has the loading class */
+body.loading {
+	overflow: hidden;
+}
+
+/* Make spinner image visible when body element has the loading class */
+body.loading .overlay {
+	display: block;
+}
+
+a.button3 {
+	display: inline-block;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-size: 20px;
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
+	font-weight: 300;
+	color: #FFFFFF;
+	background-color: #4eb5f1;
+	text-align: center;
+	transition: all 0.2s;
+}
+
+a.button3:hover {
+	background-color: #4095c6;
+	border-color: rgba(0,0,0,1);
+}
+
+#voterDetails {
+	margin-top: 12px;
+	margin-left: 1em;
+	margin-right: 1em;
+	font-size: 1.0em;
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
+	color: black;
+}
+
+.gm-style {
+	font-weight: 300;
+	font-size: calc(28px + (36 - 28) * ((100vw - 320px) / (2400 - 320)));
+}
+
+.gm-style-iw-mod {
+	font-weight: 400;
+	font-size: calc(20px + (36 - 20) * ((100vw - 320px) / (2400 - 320)));
+}
+
+@media screen and (max-width: 767px) {
+	text, input, select, textarea {
+		font-size: 16px !important;
+	}
+}
+
+#autoLocate {
+	align-content: center;
+	width: 80%;
+	font-size: calc(18px + (60 - 18) * ((100vw - 320px) / (1920 - 320)));
+}
+
+#autocomplete {
+	width: 80%;
+	height: 1.4em;
+	text-align: center;
+	font-size: calc(36px + (60 - 36) * ((100vw - 320px) / (1920 - 320)));
+}
+
+#dropOffLocationAddresses {
+	font-size: calc(16px + (30 - 16) * ((100vw - 320px) / (1920 - 320)));
+}
+
+@media print {
+	.noprint {
+		display: none;
+	}
+}
+
+@media screen {
+	.noscreen {
+		display: none;
+	}
+}
+
+.FAQItem {
+	width: 80%;
+	margin-left: 10%;
+	font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+	font-family: 'IBM Plex Sans';
+}
+
+#google_translate_element {
+	position: absolute;
+	left: 10px;
+	top: 5px;
+}
+
+#TopBoxAfterSearch {
+	height: 80px;
+	background: #3C2B64;
+	box-shadow: 0px 3px 6px #00000029;
+	padding: 10px 18px;
+	position: relative;
+}
+
+#TopBox {
+	height: 200px;
+	background: #3C2B64;
+	box-shadow: 0px 3px 6px #00000029;
+	padding: 60px 18px 10px;
+	position: relative;
+}
+
+#TopBoxFlag {
+	width: 42px;
+	height: 42px;
+	background: transparent url('../img/flag-circle.svg') no-repeat center center;
+	background-size: 100%;
+	margin: 0 auto 8px;
+}
+
+#SiteName {
+	color: #fff;
+	font-family: 'IBM Plex Sans';
+	font-size: 32px;
+	font-weight: 900;
+	line-height: 42px;
+	margin: 0 0 2px;
+	text-align: center;
+}
+
+#TagLine {
+	color: #fff;
+	font-family: 'IBM Plex Sans';
+	font-size: 16px;
+	line-height: 20px;
+	margin: 0;
+	text-align: center;
+}
+
+#Autolocate {
+	width: 90%;
+	height: 56px;
+	color: #fff;
+	font-family: 'IBM Plex Sans';
+	font-size: 24px;
+	line-height: 32px;
+	text-align: center;
+	background: #07A5A5;
+	border: 0;
+	border-radius: 6px;
+	box-shadow: 0px 2px 4px #00000029;
+	padding: 0 10px;
+}
+
+#ButtonText {
+	display: inline-block;
+	vertical-align: middle;
+	width: auto;
+	height: 32px;
+	margin-left: 10px;
+}
+
+#ButtonGraphic {
+	display: inline-block;
+	vertical-align: middle;
+	width: 24px;
+	height: 29px;
+	background: transparent url('../img/map-pin.svg') no-repeat center center;
+	background-size: 100%;
+}
+
+#Autocomplete {
+	padding-top: 1vw;
+	padding-bottom: 1vw;
+	width: 80%;
+	/* height: 1.8em; */
+	font-family: 'IBM Plex Sans';
+	text-align: center;
+	font-size: calc(18px + (54 - 18) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.hiddenBeforeSearch {
+	display: none;
+}
+
+.hiddenAfterSearch {
+	display: none;
+}
+
+.countyMessageFormatted {
+	background: #F8F8EB 0% 0% no-repeat padding-box;
+	padding: 1vw 1vw 1vw 1vw;
+	opacity: 1;
+}
+
+.statemessage {
+	padding-top: 1vw;
+}
+
+.defaultfont {
+	font-family: 'IBM Plex Sans';
+	font-size: calc(16px + (28 - 16) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.beforeMap {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.footer {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.verticalspacer {
+	padding-top: 25px;
+}
+
+.spacerUnderneath {
+	padding-bottom: 1vw;
+}
+
+.verticalspacersmall {
+	padding-top: 1vw;
+}
+
+#my_centered_buttons {
+	display: flex;
+	justify-content: center;
+}
