@@ -107,7 +107,7 @@
 
 		<!-- Modal content -->
 		<div id="modalContent" class="modal-content">
-			<div id="modalHeader" class="modal-header">
+			<div class="modal-header">
 				<span class="close">&times;</span>
 				A quick request...
 			</div>
@@ -125,10 +125,10 @@
 		var modalContent = document.getElementById("modalContent");
 
 		// Get the <span> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
+		var close = document.getElementsByClassName("close")[0];
 
 		// When the user clicks on <span> (x), close the modal
-		span.onclick = function() {
+		close.onclick = function() {
 			modal.style.display = "none";
 		}
 
@@ -138,7 +138,7 @@
 				modal.style.display = "none";
 			}
 		}
-		</script>
+	</script>
 
 	<script>
 		function googleTranslateElementInit() {
