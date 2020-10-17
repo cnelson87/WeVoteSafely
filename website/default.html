@@ -2,39 +2,34 @@
 <html>
 <head>
 	<title>I found verifiably accurate information on my nearest ballot drop-off or early voting location with one click and you can too - I vote safely, you vote safely, #WeVoteSafely</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:title" content="I vote safely, you vote safely, #WeVoteSafely">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta property="og:title" content="I vote safely, you vote safely, #WeVoteSafely" />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content="https://wevotesafely.org/img/CitizenVolunteersSafeVoting.jpg">
-	<meta property="og:description" content="I found verifiably accurate information on my nearest ballot drop-off or early voting location with one click and you can too at https://wevotesafely.org - I vote safely, you vote safely, #WeVoteSafely.">
-	<meta property="fb:app_id" content="342163656843073">
-	<meta property="og:url" content="https://wevotesafely.org/default.html">
-	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:image" content="https://wevotesafely.org/img/CitizenVolunteersSafeVoting.jpg" />
+	<meta property="og:description" content="I found verifiably accurate information on my nearest ballot drop-off or early voting location with one click and you can too at https://wevotesafely.org - I vote safely, you vote safely, #WeVoteSafely." />
+	<meta property="fb:app_id" content="342163656843073" />
+	<meta property="og:url" content="https://wevotesafely.org/default.html" />
+	<meta name="twitter:card" content="summary_large_image" />
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2payJm4Ynu0DcdCo9AfaXZTPCUEmUt4k&callback=initAutocomplete&libraries=places&v=weekly" defer></script>
 	<link rel="stylesheet" href="./css/prodv2.css" />
 	<link rel="stylesheet" href="./css/modal.css" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM Plex Sans" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" />
 	<script src="./js/devtest.js"></script>
 </head>
 <body id="main_body">
 
-	<div class="hiddenBeforeSearch" id="TopBoxAfterSearch">
+	<header class="hiddenBeforeSearch" id="HeaderAfterSearch">
 		<h1 id="SiteName">WeVoteSafely.org</h1>
-	</div>
+	</header>
 
-	<div id="TopBox">
+	<header id="Header">
 		<div id="google_translate_element"></div>
-		<div id="TopBoxFlag"></div>
+		<div id="HeaderFlag"></div>
 		<h1 id="SiteName">WeVoteSafely.org</h1>
 		<div id="TagLine">Find your nearest ballot dropbox.</div>
-	</div>
+	</header>
 
 	<div id="options">
-		<button type="button" id="Autolocate" class="noprint" onclick="onDemandGeolocate()">
-			<div id="ButtonGraphic"></div>
-			<div id="ButtonText">Use my location</div>
-		</button>
-
 		<div id="theAddress">
 			<input type="hidden" id="street_number" />
 			<input type="hidden" id="route" />
@@ -47,12 +42,15 @@
 			<input type="hidden" id="Long" />
 		</div>
 
+		<button type="button" id="Autolocate" class="noprint" onclick="onDemandGeolocate()">
+			<div id="ButtonGraphic"></div>
+			<div id="ButtonText">Use my location</div>
+		</button>
+
+		<div id="OR">OR</div>
+
 		<div id="locationField" class="noprint">
-			<input
-				id="Autocomplete"
-				placeholder="or enter your FULL U.S. address here"
-				type="text"
-			/>
+			<input type="text" id="Autocomplete" placeholder="Enter your US-based address here" />
 		</div>
 	</div>
 
@@ -84,13 +82,19 @@
 			<a class="a2a_button_reddit"></a>
 			<a class="a2a_button_email"></a>
 		</div>
-		<div class="noprint defaultfont footer verticalspacer"><a href="./faq.html#help">Help! Nothing happens when I tap the button!</a></div>
 		<div class="noprint defaultfont footer verticalspacer"><a href="./faq.html">Have questions?</a></div>
 		<div class="noprint defaultfont footer verticalspacer"><a href="./insights.html">Interested in safe voting location analytics?</a></div>
-		<div class="noprint defaultfont footer verticalspacer"><a href="./terms.html">Terms of use</a></div>
-		<div class="noprint defaultfont footer verticalspacer"><a href="./privacy.html">Privacy policy</a></div>
-		<div class="noprint defaultfont footer verticalspacer"></div>
 	</div>
+
+	<!-- <main id="MainContent">
+
+	</main> -->
+
+	<footer id="Footer">
+		<a href="./terms.html">Terms of use</a>
+		&nbsp;|&nbsp;
+		<a href="./privacy.html">Privacy policy</a>
+	</footer>
 
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
@@ -132,7 +136,7 @@
 
 	<script>
 		function googleTranslateElementInit() {
-		new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+			new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 		}
 	</script>
 

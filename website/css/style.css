@@ -9,10 +9,49 @@ html, body {
 	padding: 0;
 }
 
+body {
+	background: #f7f7f7;
+	color: #000;
+	font-family: 'IBM Plex Sans';
+	font-size: 100%; /* 16px */
+	line-height: 1.5;
+}
+
+input, select, textarea, button {
+	color: #000;
+	font-family: 'IBM Plex Sans';
+	font-size: 16px;
+}
+
+a {
+	color: #004596;
+	text-decoration: underline;
+}
+
+a:hover, a:focus, a:active {
+	color: #004596;
+	text-decoration: none;
+}
+
+/* mobile media query example */
+/* @media only screen and (max-width: 767px) {
+
+} */
+
+/* tablet+ media query example */
+/* @media only screen and (min-width: 768px) {
+
+} */
+
+/* desktop+ media query example */
+/* @media only screen and (min-width: 1025px) {
+
+} */
+
+
 /* Always set the map height explicitly to define the size of the div element that contains the map. */
 
 #map {
-	/* padding-top: 12px; */
 	height: 50%;
 	width: 100%;
 	border-width: 1px;
@@ -42,7 +81,7 @@ html, body {
 	margin-left: 1em;
 	margin-right: 1em;
 	float: left;
-	font-weight: 900;
+	font-weight: bold;
 	letter-spacing: -0.01em;
 }
 
@@ -54,7 +93,7 @@ html, body {
 	opacity: 0.95;
 	width: auto;
 	margin:auto;
-	font-weight: 900;
+	font-weight: bold;
 	letter-spacing: -0.01em;
 	text-align: center;
 }
@@ -79,7 +118,7 @@ html, body {
 	opacity: 0.95;
 	width: auto;
 	margin: auto;
-	font-weight: 900;
+	font-weight: bold;
 	letter-spacing: -0.01em;
 	text-align: center;
 }
@@ -113,20 +152,6 @@ html, body {
 
 .wideField {
 	width: 200px;
-}
-
-#options {
-	margin-top: 0.2em;
-	display: block;
-	clear: both;
-	position: relative;
-	font-size: x-large;
-	text-align: center;
-}
-
-#locationField {
-	margin-top: 12px;
-	margin-bottom: 12px;
 }
 
 .overlay {
@@ -187,12 +212,6 @@ a.button3:hover {
 	font-size: calc(20px + (36 - 20) * ((100vw - 320px) / (2400 - 320)));
 }
 
-@media screen and (max-width: 767px) {
-	text, input, select, textarea {
-		font-size: 16px !important;
-	}
-}
-
 #autoLocate {
 	align-content: center;
 	width: 80%;
@@ -227,4 +246,18 @@ a.button3:hover {
 	margin-left: 10%;
 	font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
 	font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+#options {
+	margin-top: 0.2em;
+	display: block;
+	clear: both;
+	position: relative;
+	font-size: x-large;
+	text-align: center;
+}
+
+#locationField {
+	margin-top: 12px;
+	margin-bottom: 12px;
 }

@@ -331,11 +331,11 @@ function addClass(theElement, theClass) {
 }
 
 function alterVisibilitiesAfterSearch() {
-	document.getElementById("TopBox").classList.add("hiddenAfterSearch");
+	document.getElementById("Header").classList.add("hiddenAfterSearch");
 	document.getElementById("printThis").classList.remove("hiddenBeforeSearch");
 	document.getElementById("countyMessage").classList.remove("hiddenBeforeSearch");
 	document.getElementById("countyMessage").classList.add("countyMessageFormatted");
-	document.getElementById("TopBoxAfterSearch").classList.remove("hiddenBeforeSearch");
+	document.getElementById("HeaderAfterSearch").classList.remove("hiddenBeforeSearch");
 	document.getElementById("map").classList.remove("hiddenBeforeSearch");
 	document.getElementById("temporaryBlurb").classList.add("hiddenAfterSearch");
 	document.getElementById("zipCode").classList.add("hiddenAfterSearch");
