@@ -219,6 +219,11 @@ body.loading .overlay {
 	padding: 0;
 }
 
+#Autolocate:focus {
+	border-color: #fff;
+	outline: 0;
+}
+
 .ButtonText {
 	display: inline-block;
 	vertical-align: middle;

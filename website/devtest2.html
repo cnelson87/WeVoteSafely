@@ -62,19 +62,20 @@
 			 https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
 	-->
 
-	<div class="beforeMap hiddenBeforeSearch spacerUnderneath noprint" id="printThis"><a href="javascript:window.print()">Print this for someone without internet access</a></div>
-	<div class="hiddenBeforeSearch" id="countyMessage"></div>
-
 	<div id="map" class="hiddenBeforeSearch"></div>
 
 	<div id="voterDetails">
 		<div id="rawOutput"></div>
 		<div id="dropOffLocationAddresses" class="noscreen"></div>
-		<div id="stateMessage"class="noprint"></div>
-		<div id="errorMessage"class="noprint"></div>
+		<div id="stateMessage" class="hiddenBeforeSearch"></div>
+		<div id="countyMessage" class="hiddenBeforeSearch"></div>
+		<div id="printThis" class="hiddenBeforeSearch noprint">
+			<a href="javascript:window.print()">Print this for someone without internet access</a>
+		</div>
+		<div id="errorMessage" class="noprint"></div>
 	</div>
 
-	<div id="socialMedia" class="noprint" style="display:none;">
+	<div id="socialMedia" class="hiddenBeforeSearch noprint">
 		<h3 class="socialMediaHeading">Share on social media</h3>
 		<div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="socialMediaButtons">
 			<a class="a2a_dd" href="https://www.addtoany.com/share"></a>

@@ -215,7 +215,6 @@ function retrieveNearestLocations(lat, lng, theURL) {
 		}
 	};
 
-
 	xmlhttp.open("GET", theURL, true);
 	xmlhttp.send();
 }
@@ -332,9 +331,10 @@ function alterVisibilitiesAfterSearch() {
 	document.getElementById("HeaderAfterSearch").classList.remove("hiddenBeforeSearch");
 	document.getElementById("Header").classList.add("hiddenAfterSearch");
 	document.getElementById("printThis").classList.remove("hiddenBeforeSearch");
+	document.getElementById("stateMessage").classList.remove("hiddenBeforeSearch");
 	document.getElementById("countyMessage").classList.remove("hiddenBeforeSearch");
 	document.getElementById("countyMessage").classList.add("countyMessageFormatted");
+	document.getElementById("socialMedia").classList.remove("hiddenBeforeSearch");
 	document.getElementById("map").classList.remove("hiddenBeforeSearch");
 	document.getElementById("temporaryBlurb").classList.add("hiddenAfterSearch");
-	document.getElementById("zipCode").classList.add("hiddenAfterSearch");
 }
