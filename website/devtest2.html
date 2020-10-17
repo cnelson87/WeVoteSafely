@@ -18,18 +18,18 @@
 </head>
 <body id="main_body">
 
-	<header class="hiddenBeforeSearch" id="HeaderAfterSearch">
-		<h1 id="SiteName">WeVoteSafely.org</h1>
+	<header id="HeaderAfterSearch" class="hiddenBeforeSearch">
+		<h1 class="SiteName">WeVoteSafely.org</h1>
 	</header>
 
 	<header id="Header">
 		<div id="google_translate_element"></div>
-		<div id="HeaderFlag"></div>
-		<h1 id="SiteName">WeVoteSafely.org</h1>
-		<div id="TagLine">Find your nearest ballot dropbox.</div>
+		<div class="HeaderFlag"></div>
+		<h1 class="SiteName">WeVoteSafely.org</h1>
+		<div class="TagLine">Find your nearest ballot dropbox.</div>
 	</header>
 
-	<div id="options">
+	<div id="options" class="noprint">
 		<div id="theAddress">
 			<input type="hidden" id="street_number" />
 			<input type="hidden" id="route" />
@@ -42,16 +42,18 @@
 			<input type="hidden" id="Long" />
 		</div>
 
-		<button type="button" id="Autolocate" class="noprint" onclick="onDemandGeolocate()">
-			<div id="ButtonGraphic"></div>
-			<div id="ButtonText">Use my location</div>
+		<button type="button" id="Autolocate" onclick="onDemandGeolocate()">
+			<div class="ButtonGraphic"></div>
+			<div class="ButtonText">Use my location</div>
 		</button>
 
-		<div id="OR">OR</div>
+		<div class="OR">OR</div>
 
-		<div id="locationField" class="noprint">
-			<input type="text" id="Autocomplete" placeholder="Enter your US-based address here" />
-		</div>
+		<input type="text" id="Autocomplete" placeholder="Enter your US-based address here" />
+
+		<p id="temporaryBlurb">
+			Find your nearest <a target="_blank" href="./faq.html#verifiable">verifiably accurate</a> safe ballot drop-off or early voting location.
+		</p>
 	</div>
 
 	<!-- Note: The address components in this sample are typical. You might need to adjust them for
@@ -59,20 +61,21 @@
 			 https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
 	-->
 
-	<div class="defaultfont beforeMap hiddenBeforeSearch spacerUnderneath noprint" id="printThis"><a href="javascript:window.print()">Print this for someone without internet access</a></div>
-	<div class="hiddenBeforeSearch defaultfont" id="countyMessage"></div>
+	<div class="beforeMap hiddenBeforeSearch spacerUnderneath noprint" id="printThis"><a href="javascript:window.print()">Print this for someone without internet access</a></div>
+	<div class="hiddenBeforeSearch" id="countyMessage"></div>
+
 	<div id="map" class="hiddenBeforeSearch"></div>
 
 	<div id="voterDetails">
 		<div id="rawOutput"></div>
-		<div class="noscreen" id="dropOffLocationAddresses"></div>
-		<hr />
-		<div id="temporaryBlurb" class="noprint defaultfont footer">Find your nearest <a target="_blank" href="./faq.html#verifiable">verifiably accurate</a> safe ballot drop-off or early voting location.</div>
-		<div id="zipCode" class="noprint defaultfont footer verticalspacer"><mark><a href="./faq.html#ZipCode">Why can I not just use my zip code?</a></mark></div>
-		<div class="noprint defaultfont" id="stateMessage"></div>
+		<div id="dropOffLocationAddresses" class="noscreen"></div>
+		<div class="noprint" id="stateMessage"></div>
 		<div class="noprint" id="errorMessage"></div>
-		<div class="noprint defaultfont footer verticalspacer">Share on social media</div>
-		<div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="my_centered_buttons">
+	</div>
+
+	<div id="socialMedia" class="noprint" style="display:none;">
+		<h3 class="socialMediaHeading">Share on social media</h3>
+		<div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="socialMediaButtons">
 			<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
 			<a class="a2a_button_facebook"></a>
 			<a class="a2a_button_twitter"></a>
@@ -82,14 +85,17 @@
 			<a class="a2a_button_reddit"></a>
 			<a class="a2a_button_email"></a>
 		</div>
-		<div class="noprint defaultfont footer verticalspacer"><a href="./faq.html">Have questions?</a></div>
 	</div>
 
-	<!-- <main id="MainContent">
+	<div class="noprint" style="display:none;">
+		<a href="./insights.html">Interested in safe voting location analytics?</a>
+	</div>
 
-	</main> -->
+	<div class="PreFooter noprint">
+		<a href="./faq.html">Have some questions?</a>
+	</div>
 
-	<footer id="Footer">
+	<footer class="Footer noprint">
 		<a href="./terms.html">Terms of use</a>
 		&nbsp;|&nbsp;
 		<a href="./privacy.html">Privacy policy</a>

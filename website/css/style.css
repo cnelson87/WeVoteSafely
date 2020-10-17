@@ -12,14 +12,14 @@ html, body {
 body {
 	background: #f7f7f7;
 	color: #000;
-	font-family: 'IBM Plex Sans';
+	font-family: 'IBM Plex Sans', sans-serif;
 	font-size: 100%; /* 16px */
 	line-height: 1.5;
 }
 
 input, select, textarea, button {
 	color: #000;
-	font-family: 'IBM Plex Sans';
+	font-family: 'IBM Plex Sans', sans-serif;
 	font-size: 16px;
 }
 
@@ -32,21 +32,6 @@ a:hover, a:focus, a:active {
 	color: #004596;
 	text-decoration: none;
 }
-
-/* mobile media query example */
-/* @media only screen and (max-width: 767px) {
-
-} */
-
-/* tablet+ media query example */
-/* @media only screen and (min-width: 768px) {
-
-} */
-
-/* desktop+ media query example */
-/* @media only screen and (min-width: 1025px) {
-
-} */
 
 
 /* Always set the map height explicitly to define the size of the div element that contains the map. */

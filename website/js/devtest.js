@@ -315,9 +315,7 @@ function createGenericLink (theText, theURL) {
 function removeClass(theElement, theClass) {
 	var element = document.getElementById(theElement);
 	/*element.classList.remove("mystyle");*/
-	alert('1');
 	element.className = element.className.replace(/\b + theClass + \b/g, "");
-	alert('2');
 }
 
 function addClass(theElement, theClass) {
@@ -331,11 +329,11 @@ function addClass(theElement, theClass) {
 }
 
 function alterVisibilitiesAfterSearch() {
+	document.getElementById("HeaderAfterSearch").classList.remove("hiddenBeforeSearch");
 	document.getElementById("Header").classList.add("hiddenAfterSearch");
 	document.getElementById("printThis").classList.remove("hiddenBeforeSearch");
 	document.getElementById("countyMessage").classList.remove("hiddenBeforeSearch");
 	document.getElementById("countyMessage").classList.add("countyMessageFormatted");
-	document.getElementById("HeaderAfterSearch").classList.remove("hiddenBeforeSearch");
 	document.getElementById("map").classList.remove("hiddenBeforeSearch");
 	document.getElementById("temporaryBlurb").classList.add("hiddenAfterSearch");
 	document.getElementById("zipCode").classList.add("hiddenAfterSearch");

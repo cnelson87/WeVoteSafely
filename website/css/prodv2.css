@@ -12,7 +12,7 @@ html, body {
 body {
 	background: #f7f7f7;
 	color: #000;
-	font-family: 'IBM Plex Sans';
+	font-family: 'IBM Plex Sans', sans-serif;
 	font-size: 100%; /* 16px */
 	line-height: 1.5;
 	padding-bottom: calc(1.5em + 50px); /* 74px - must must #Footer height */
@@ -20,7 +20,7 @@ body {
 
 input, select, textarea, button {
 	color: #000;
-	font-family: 'IBM Plex Sans';
+	font-family: 'IBM Plex Sans', sans-serif;
 	font-size: 16px;
 }
 
@@ -195,15 +195,6 @@ a.button3:hover {
 	border-color: rgba(0,0,0,1);
 }
 
-#voterDetails {
-	margin-top: 12px;
-	margin-left: 1em;
-	margin-right: 1em;
-	font-size: 1.0em;
-	font-family: "Roboto", Arial, Helvetica, sans-serif;
-	color: #000;
-}
-
 .gm-style {
 	font-weight: 300;
 	font-size: calc(28px + (36 - 28) * ((100vw - 320px) / (2400 - 320)));
@@ -255,7 +246,12 @@ a.button3:hover {
 	top: 5px;
 }
 
-#Footer {
+.PreFooter {
+	padding: 10px 18px;
+	text-align: center;
+}
+
+.Footer {
 	width: 100%;
 	height: calc(1.5em + 50px); /* 74px */
 	padding: 10px 18px 40px;
@@ -265,62 +261,50 @@ a.button3:hover {
 }
 
 #HeaderAfterSearch {
-	height: 80px;
-	background: #3C2B64;
+	height: 120px;
+	background: #3c2b64;
 	box-shadow: 0px 3px 6px #00000029;
-	padding: 10px 18px;
-	position: relative;
+	padding: 20px 18px 10px;
+	text-align: center;
 }
 
 #Header {
 	height: 200px;
-	background: #3C2B64;
+	background: #3c2b64;
 	box-shadow: 0px 3px 6px #00000029;
 	padding: 60px 18px 10px;
-	position: relative;
+	text-align: center;
 }
 
-#HeaderFlag {
-	width: 42px;
-	height: 42px;
+.HeaderFlag {
+	width: 44px;
+	height: 44px;
 	background: transparent url('../img/flag-circle.svg') no-repeat center center;
 	background-size: 100%;
 	margin: 0 auto 8px;
 }
 
-#SiteName {
+.SiteName {
 	color: #fff;
 	font-size: 32px;
 	font-weight: bold;
 	line-height: 42px;
 	margin: 0 0 2px;
-	text-align: center;
 }
 
-#TagLine {
+.TagLine {
 	color: #fff;
 	font-size: 16px;
 	line-height: 20px;
 	margin: 0;
-	text-align: center;
 }
 
 #options {
 	max-width: 400px;
 	margin: 0 auto;
-	padding: 28px 18px;
-	position: relative;
+	padding: 30px 18px 10px;
+	text-align: center;
 }
-
-@media screen and (min-width: 1025px) {
-	#options {
-		max-width: 600px;
-	}
-}
-
-/* #locationField {
-
-} */
 
 #Autolocate {
 	display: block;
@@ -334,10 +318,10 @@ a.button3:hover {
 	border: 1px solid #07a5a5;
 	border-radius: 6px;
 	box-shadow: 0px 2px 4px #00000029;
-	padding: 0 10px;
+	padding: 0;
 }
 
-#ButtonText {
+.ButtonText {
 	display: inline-block;
 	vertical-align: middle;
 	width: auto;
@@ -345,13 +329,18 @@ a.button3:hover {
 	margin-left: 10px;
 }
 
-#ButtonGraphic {
+.ButtonGraphic {
 	display: inline-block;
 	vertical-align: middle;
 	width: 24px;
 	height: 29px;
 	background: transparent url('../img/map-pin.svg') no-repeat center center;
 	background-size: 100%;
+}
+
+.OR {
+	font-weight: bold;
+	margin: 4px 0;
 }
 
 #Autocomplete {
@@ -362,12 +351,63 @@ a.button3:hover {
 	background: #fff;
 	border: 1px solid #afafaf;
 	border-radius: 6px;
+	padding: 0;
 }
 
-#OR {
-	font-weight: bold;
+#temporaryBlurb {
+	margin: 1.5em 0 0;
+}
+
+@media screen and (min-width: 1025px) {
+	#options {
+		max-width: 640px;
+		padding-top: 50px;
+	}
+	#Autolocate,
+	#Autocomplete {
+		height: 64px;
+	}
+	#temporaryBlurb {
+		margin-top: 2.5em;
+	}
+}
+
+#voterDetails {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 10px 18px;
 	text-align: center;
-	margin: 4px 0;
+}
+
+@media screen and (min-width: 1025px) {
+	#voterDetails {
+		max-width: 640px;
+	}
+}
+
+#socialMedia {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 10px 18px;
+	text-align: center;
+}
+
+@media screen and (min-width: 1025px) {
+	#socialMedia {
+		max-width: 640px;
+	}
+}
+
+.socialMediaHeading {
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 20px;
+	margin: 0 0 8px;
+}
+
+#socialMediaButtons {
+	display: flex;
+	justify-content: center;
 }
 
 .hiddenBeforeSearch {
@@ -379,7 +419,7 @@ a.button3:hover {
 }
 
 .countyMessageFormatted {
-	background: #F8F8EB 0% 0% no-repeat padding-box;
+	background: #f8f8eb;
 	padding: 1vw 1vw 1vw 1vw;
 	opacity: 1;
 }
@@ -388,18 +428,7 @@ a.button3:hover {
 	padding-top: 1vw;
 }
 
-.defaultfont {
-	font-family: 'IBM Plex Sans';
-	font-size: calc(16px + (28 - 16) * ((100vw - 320px) / (1920 - 320)));
-}
-
 .beforeMap {
-	width: 100%;
-	margin: 0 auto;
-	text-align: center;
-}
-
-.footer {
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
@@ -415,9 +444,4 @@ a.button3:hover {
 
 .verticalspacersmall {
 	padding-top: 1vw;
-}
-
-#my_centered_buttons {
-	display: flex;
-	justify-content: center;
 }
