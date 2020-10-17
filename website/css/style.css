@@ -4,7 +4,7 @@
 }
 
 html, body {
-	min-height: 100%;
+	min-height: 100vh;
 	margin: 0;
 	padding: 0;
 }
@@ -33,6 +33,27 @@ a:hover, a:focus, a:active {
 	text-decoration: none;
 }
 
+.overlay {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background: rgba(255,255,255,0.8) url("https://www.tutorialrepublic.com/examples/images/loader.gif") no-repeat center center;
+}
+
+/* Turn off scrollbar when body element has the loading class */
+body.loading {
+	overflow: hidden;
+}
+
+/* Make spinner image visible when body element has the loading class */
+body.loading .overlay {
+	display: block;
+}
+
 
 /* Always set the map height explicitly to define the size of the div element that contains the map. */
 
@@ -40,7 +61,7 @@ a:hover, a:focus, a:active {
 	height: 50%;
 	width: 100%;
 	border-width: 1px;
-	background-color: lightgray;
+	background: #d3d3d3;
 }
 
 #nav {
@@ -137,45 +158,6 @@ a:hover, a:focus, a:active {
 
 .wideField {
 	width: 200px;
-}
-
-.overlay {
-	display: none;
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	z-index: 999;
-	background: rgba(255,255,255,0.8) url("https://www.tutorialrepublic.com/examples/images/loader.gif") center no-repeat;
-}
-
-/* Turn off scrollbar when body element has the loading class */
-body.loading {
-	overflow: hidden;
-}
-
-/* Make spinner image visible when body element has the loading class */
-body.loading .overlay {
-	display: block;
-}
-
-a.button3 {
-	display: inline-block;
-	box-sizing: border-box;
-	text-decoration: none;
-	font-size: 20px;
-	font-family: "Roboto", Arial, Helvetica, sans-serif;
-	font-weight: 300;
-	color: #fff;
-	background-color: #4eb5f1;
-	text-align: center;
-	transition: all 0.2s;
-}
-
-a.button3:hover {
-	background-color: #4095c6;
-	border-color: rgba(0,0,0,1);
 }
 
 #voterDetails {

@@ -4,7 +4,7 @@
 }
 
 html, body {
-	min-height: 100%;
+	min-height: 100vh;
 	margin: 0;
 	padding: 0;
 }
@@ -34,126 +34,16 @@ a:hover, a:focus, a:active {
 	text-decoration: none;
 }
 
-/* mobile media query example */
-/* @media only screen and (max-width: 767px) {
-
-} */
-
-/* tablet+ media query example */
-/* @media only screen and (min-width: 768px) {
-
-} */
-
-/* desktop+ media query example */
-/* @media only screen and (min-width: 1025px) {
-
-} */
-
-
-/* Always set the map height explicitly to define the size of the div element that contains the map. */
-
-#map {
-	padding-top: 12px;
-	height: 50%;
-	width: 100%;
-	border-width: 1px;
-	background-color: lightgray;
+.backLink {
+	background: transparent url('../img/arrow-left-circle.svg') no-repeat left center;
+	background-size: 20px 20px;
+	padding-left: 28px;
 }
 
-#nav {
-	background-color: #fee;
-	background: linear-gradient(90deg, #808 0%, #808 10%, #808 90%, #808 100%);
-	box-shadow: 0 0 1em rgba(0,0,0,0.3);
-	top: 0;
-	width: 100%;
-	padding-top: 0.5vw;
-	padding-bottom: 0.5vw;
-	margin: auto;
-	z-index: 999;
-	user-select: none !important;
-}
-
-#logo {
-	font-size: 1.95em;
-	line-height: 1.67em;
-	font-family: "Roboto", Arial, Helvetica, sans-serif;
-	color: #fff;
-	opacity: 0.95;
-	width: auto;
-	margin-left: 1em;
-	margin-right: 1em;
-	float: left;
-	font-weight: bold;
-	letter-spacing: -0.01em;
-}
-
-#centeredLogo {
-	font-size: 1.95em;
-	line-height: 1.2em;
-	font-family: "Roboto", Arial, Helvetica, sans-serif;
-	color: #fff;
-	opacity: 0.95;
-	width: auto;
-	margin:auto;
-	font-weight: bold;
-	letter-spacing: -0.01em;
-	text-align: center;
-}
-
-@media only screen and (max-width: 1024px) {
-	#tagLine {
-			display: none;
-	}
-}
-
-@media (orientation:portrait) {
-	#tagLine {
-		display: none;
-	}
-}
-
-#tagLine {
-	font-size: 1.65em;
-	line-height: 1.2em;
-	font-family: "Roboto", Arial, Helvetica, sans-serif, 'Lato', sans-serif;
-	color: #fff;
-	opacity: 0.95;
-	width: auto;
-	margin: auto;
-	font-weight: bold;
-	letter-spacing: -0.01em;
-	text-align: center;
-}
-
-.label {
-	text-align: right;
-	font-weight: bold;
-	width: 100px;
-	color: #303030;
-	font-family: "Roboto", Arial, Helvetica, sans-serif;
-}
-
-#address {
-	visibility: visible;
-	border: 1px solid #000090;
-	background-color: #f0f9ff;
-	width: 780px;
-}
-
-#address td {
-	font-size: 10pt;
-}
-
-.field {
-	width: 99%;
-}
-
-.slimField {
-	width: 80px;
-}
-
-.wideField {
-	width: 200px;
+.faqLink {
+	background: transparent url('../img/help-circle.svg') no-repeat left center;
+	background-size: 20px 20px;
+	padding-left: 28px;
 }
 
 .overlay {
@@ -164,7 +54,7 @@ a:hover, a:focus, a:active {
 	top: 0;
 	left: 0;
 	z-index: 999;
-	background: rgba(255,255,255,0.8) url("../img/loader.gif") center no-repeat;
+	background: rgba(255,255,255,0.8) url("../img/loader.gif") no-repeat center center;
 }
 
 /* Turn off scrollbar when body element has the loading class */
@@ -177,25 +67,52 @@ body.loading .overlay {
 	display: block;
 }
 
-a.button3 {
-	display: inline-block;
-	box-sizing: border-box;
-	text-decoration: none;
-	font-size: 20px;
-	font-family: "Roboto", Arial, Helvetica, sans-serif;
-	font-weight: 300;
-	color: #fff;
-	background-color: #4eb5f1;
-	text-align: center;
-	transition: all 0.2s;
+#MainContent {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 10px 18px;
 }
 
-a.button3:hover {
-	background-color: #4095c6;
-	border-color: rgba(0,0,0,1);
+#MainContent h1 {
+	font-size: 1.5em;
+	font-weight: normal;
+	line-height: 1.0;
+	margin: 1em 0 1.5em;
 }
 
-.gm-style {
+#MainContent h2 {
+	font-size: 1.25em;
+	font-weight: normal;
+	line-height: 1.0;
+	margin: 2em 0 1em;
+}
+
+#MainContent h3 {
+	font-size: 1.0em;
+	font-weight: bold;
+	line-height: 1.0;
+	margin: 2em 0 1em;
+}
+
+@media screen and (min-width: 1025px) {
+	#MainContent {
+		width: 80%;
+		max-width: none;
+	}
+}
+
+
+/* Always set the map height explicitly to define the size of the div element that contains the map. */
+
+#map {
+	padding-top: 12px;
+	height: 50%;
+	width: 100%;
+	border-width: 1px;
+	background: #d3d3d3;
+}
+
+/* .gm-style {
 	font-weight: 300;
 	font-size: calc(28px + (36 - 28) * ((100vw - 320px) / (2400 - 320)));
 }
@@ -203,20 +120,7 @@ a.button3:hover {
 .gm-style-iw-mod {
 	font-weight: 400;
 	font-size: calc(20px + (36 - 20) * ((100vw - 320px) / (2400 - 320)));
-}
-
-#autoLocate {
-	align-content: center;
-	width: 80%;
-	font-size: calc(18px + (60 - 18) * ((100vw - 320px) / (1920 - 320)));
-}
-
-#autocomplete {
-	width: 80%;
-	height: 1.4em;
-	text-align: center;
-	font-size: calc(36px + (60 - 36) * ((100vw - 320px) / (1920 - 320)));
-}
+} */
 
 #dropOffLocationAddresses {
 	font-size: calc(16px + (30 - 16) * ((100vw - 320px) / (1920 - 320)));
@@ -232,12 +136,6 @@ a.button3:hover {
 	.noscreen {
 		display: none;
 	}
-}
-
-.FAQItem {
-	width: 80%;
-	margin-left: 10%;
-	font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
 }
 
 #google_translate_element {
@@ -355,7 +253,7 @@ a.button3:hover {
 }
 
 #temporaryBlurb {
-	margin: 1.5em 0 0;
+	margin: 20px 0 0;
 }
 
 @media screen and (min-width: 1025px) {
@@ -368,7 +266,7 @@ a.button3:hover {
 		height: 64px;
 	}
 	#temporaryBlurb {
-		margin-top: 2.5em;
+		margin-top: 40px;
 	}
 }
 

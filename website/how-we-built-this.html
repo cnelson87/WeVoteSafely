@@ -2,27 +2,26 @@
 <html>
 <head>
 	<title>I found verifiably accurate information on my nearest ballot drop-off or early voting location with one click and you can too at https://wevotesafely.org - I vote safely, you vote safely, #WeVoteSafely</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="./css/prodv2.css" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" />
 </head>
 <body id="main_body">
 
-	<div id="Header">
+	<header id="HeaderAfterSearch">
 		<div id="google_translate_element"></div>
-		<div id="HeaderFlag"></div>
-		<h1 id="SiteName">WeVoteSafely.org</h1>
-		<div id="TagLine">Find your nearest ballot dropbox.</div>
-	</div>
+		<div class="HeaderFlag"></div>
+		<h1 class="SiteName">WeVoteSafely.org</h1>
+	</header>
 
-	<div id="faq">
-		<p class="FAQItem" align="center" style='text-align:center'><b><a href="default.html">Back to Main Page</a></b></p>
+	<main id="MainContent">
+		<p><a class="backLink" href="default.html">Back</a></p>
 
-		<p class="FAQItem" align=center style='text-align:center'><b>How We Built It</b></p>
+		<h1>How We Built It</h1>
 
-		<p class="FAQItem"><b>Methods Used</b></p>
+		<h3>Methods Used</h3>
 
-		<p class="FAQItem">First, we created specialized Google Sheets and Excel workbooks to enable volunteers to collect data
+		<p>First, we created specialized Google Sheets and Excel workbooks to enable volunteers to collect data
 			for a single given county. Some states aggregated their data across counties, making our job easier. Each of these
 			Google Sheets/Excel spreadsheets was set up in a way to be structurally similar to our database, making input from the
 			spreadsheets to the database easier. At a minimum, volunteers were responsible for collecting information on the type
@@ -31,9 +30,7 @@
 			location notes, etc. were also captured, where available.
 		</p>
 
-		<p class="FAQItem"><o:p>&nbsp;</o:p></p>
-
-		<p class="FAQItem">Once each spreadsheet had the basic information, we ran the physical addresses through a geocoding
+		<p>Once each spreadsheet had the basic information, we ran the physical addresses through a geocoding
 			process from a major technology company to turn physical addresses into latitude. Geocoding is an amazing, yet imperfect
 			technology. Not only are typos possible (e.g. 123 Main Streeet), but some addresses that are customarily written in words
 			(e.g. One Courthouse Square) are much more easily geocoded when re-written as 1 Courthouse Square. Latitude and longitude
@@ -41,28 +38,22 @@
 			that came back from the geocoding processes were correct?
 		</p>
 
-		<p class="FAQItem"><o:p>&nbsp;</o:p></p>
-
-		<p class="FAQItem">Luckily, the geocoding process also returns the city, county, and state of the geocoded address. Since we
+		<p>Luckily, the geocoding process also returns the city, county, and state of the geocoded address. Since we
 			knew which county and state we were collecting for, anything that did not match was reviewed and corrected, often by hand.
 			Next, we checked to make sure that the city matched. This was a little more difficult as LaGrange, IL and La Grange, IL
 			needed to be reviewed (and sometimes corrected) manually as well.
 		</p>
 
-		<p class="FAQItem"><o:p>&nbsp;</o:p></p>
-
-		<p class="FAQItem">Once we were confident that we had a clean dataset for a given city, county, or state, we imported it into
+		<p>Once we were confident that we had a clean dataset for a given city, county, or state, we imported it into
 			our database so it could be served up to users as the output of their proximity searches.
 		</p>
 
-		<p class="FAQItem"><o:p>&nbsp;</o:p></p>
+		<h3>Data Sources Used</h3>
 
-		<p class="FAQItem"><b>Data Sources Used</b></p>
-
-		<p class="FAQItem">Full details on which city/county/state data sources we used for each county are <a target="_blank" href="https://docs.google.com/spreadsheets/d/1kzGJBnuoNg1u7IR5haV50Cvd5oYOA_3ceL7qwMDT5Js/edit?usp=sharing">here</a>
+		<p>Full details on which city/county/state data sources we used for each county are <a target="_blank" href="https://docs.google.com/spreadsheets/d/1kzGJBnuoNg1u7IR5haV50Cvd5oYOA_3ceL7qwMDT5Js/edit?usp=sharing">here</a>
 		</p>
 
-	</div>
+	</main>
 
 	<script>
 		function googleTranslateElementInit() {
@@ -70,7 +61,7 @@
 		}
 	</script>
 
-	<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
