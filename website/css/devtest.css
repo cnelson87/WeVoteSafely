@@ -3,6 +3,12 @@
 	box-sizing: border-box;
 }
 
+html, body {
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 /* Always set the map height explicitly to define the size of the div element that contains the map. */
 
 #map {
@@ -21,7 +27,7 @@
 	width: 100%;
 	padding-top: 0.5vw;
 	padding-bottom: 0.5vw;
-	margin:auto;
+	margin: auto;
 	z-index: 999;
 	user-select: none !important;
 }
@@ -69,21 +75,13 @@
 	font-size: 1.65em;
 	line-height: 1.2em;
 	font-family: "Roboto", Arial, Helvetica, sans-serif, 'Lato', sans-serif;
-	color: white;
+	color: #fff;
 	opacity: 0.95;
 	width: auto;
 	margin: auto;
 	font-weight: 900;
 	letter-spacing: -0.01em;
 	text-align: center;
-}
-
-/* Optional: Makes the sample page fill the window. */
-
-html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
 }
 
 .label {
@@ -159,7 +157,7 @@ a.button3 {
 	font-size: 20px;
 	font-family: "Roboto", Arial, Helvetica, sans-serif;
 	font-weight: 300;
-	color: #FFFFFF;
+	color: #fff;
 	background-color: #4eb5f1;
 	text-align: center;
 	transition: all 0.2s;
@@ -176,7 +174,7 @@ a.button3:hover {
 	margin-right: 1em;
 	font-size: 1.0em;
 	font-family: "Roboto", Arial, Helvetica, sans-serif;
-	color: black;
+	color: #000;
 }
 
 .gm-style {

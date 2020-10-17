@@ -42,7 +42,7 @@
 
 /* The Close Button */
 .close {
-	color: white;
+	color: #fff;
 	float: right;
 	font-size: 38px;
 	font-weight: bold;
@@ -50,15 +50,15 @@
 
 .close:hover,
 .close:focus {
-	color: #AAFFAA;
+	color: #afa;
 	text-decoration: none;
 	cursor: pointer;
 }
 
 .modal-header {
 	padding: 2px 16px;
-	background-color: #550055;
-	color: white;
+	background-color: #505;
+	color: #fff;
 }
 
 .modal-body {
@@ -73,12 +73,12 @@
 	height: 1.4em;
 	font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
 	letter-spacing: 0px;
-	color: #FFFFFF;
+	color: #fff;
 	opacity: 1;
 }
 
 .modal-footer {
 	padding: 2px 16px;
-	background-color: #550055;
-	color: white;
+	background-color: #505;
+	color: #fff;
 }
