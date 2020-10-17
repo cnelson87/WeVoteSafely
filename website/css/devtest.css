@@ -252,6 +252,11 @@ body.loading .overlay {
 	padding: 0;
 }
 
+#Autocomplete:focus {
+	border-color: #000;
+	outline: 0;
+}
+
 #temporaryBlurb {
 	margin: 20px 0 0;
 }
@@ -318,17 +323,51 @@ body.loading .overlay {
 
 .countyMessageFormatted {
 	background: #f8f8eb;
-	opacity: 1;
 }
 
 .statemessage {
 	padding-top: 1vw;
 }
 
-.verticalspacer {
-	padding-top: 25px;
+.beforeMap {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
 }
 
-.verticalspacersmall {
-	padding-top: 1vw;
+.spacerUnderneath {
+	padding-bottom: 1vw;
+}
+
+::-webkit-input-placeholder {
+	color: #999;
+	opacity: 1;
+}
+::-moz-placeholder {
+	color: #999;
+	opacity: 1;
+}
+:-ms-input-placeholder {
+	color: #999;
+	opacity: 1;
+}
+::placeholder {
+	color: #999;
+	opacity: 1;
+}
+:focus::-webkit-input-placeholder {
+	color: transparent;
+	opacity: 0;
+}
+:focus::-moz-placeholder {
+	color: transparent;
+	opacity: 0;
+}
+:focus:-ms-input-placeholder {
+	color: transparent;
+	opacity: 0;
+}
+:focus::placeholder {
+	color: transparent;
+	opacity: 0;
 }
